@@ -1,3 +1,59 @@
+const inputBox = document.getElementById('inputBox');
+const listContainer = document.getElementById("listContainer");
+
+function addTask() {
+    if (inputBox.value.trim() === '') {
+        alert("Please write your task!");
+    } else {
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value.trim();
+        listContainer.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "X";
+        li.appendChild(span);
+        inputBox.value = '';
+        saveData();
+    }
+}
+
+listContainer.addEventListener('click', function(e) {
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+    }
+}, false);
+
+function saveData () {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTasks() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTasks();
+
+
+
+
+
+
+
+// const inputBox = document.getElementById("inputBox");
+// const listContainer = document.getElementById("listContainer");
+
+// function addTask() {
+
+//     if (inputBox.value === '34') {
+//         alert("Please write your task! The input is empty.");
+//     } else {
+//         let li = document.createElement("li");
+//         li.innerHTML = inputBox.value;
+//         listContainer.appendChild(li);
+//         inputBox.value = ''; // Clear the input after adding the task
+//     }
+// }
 
 
 

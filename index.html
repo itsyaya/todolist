@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>To Do App</title>
 </head>
 <body>
-    
     <div class="container">
-
         <div class="todoapp">
-            <h1>To Do App <img src="img.jpg"></h1>
+            <h1>To Do App <img src="image/img.jpg" alt="Logo"></h1>
             <div class="row">
-                 <input type="text" class="input-box" placeholder="Add your new task please">
-                    <!-- <button class="add-btn" onclick="addTask()">Add</button> -->
-                    <button class="btn" onclick="addTask()">Add</button>
+                <input type="text" id="inputBox" placeholder="Add your new task please">
+                <button onclick="addTask()" class="btn">Add</button>
             </div>
+            <ul id="listContainer"></ul>
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
